@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul Kumar Yadav</title>
+  <meta name="description" content="Academic website of Rahul Kumar Yadav, PhD Student in Machine Learning at IIT Bombay." />
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --surface-2: #eef3f8;
+      --text: #142033;
+      --muted: #516074;
+      --line: #dbe4ee;
+      --accent: #1f4b7a;
+      --accent-2: #2b6cb0;
+      --shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      --maxw: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fbff 0%, #f5f7fb 100%);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(248, 251, 255, 0.82);
+      border-bottom: 1px solid rgba(219, 228, 238, 0.7);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 68px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+    }
+
+    .hero-card {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+      padding: 32px;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #dce8f8 0%, #eff5fb 100%);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .affiliation {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      border-radius: 999px;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .chip:hover {
+      text-decoration: none;
+      background: #e7f0fb;
+      border-color: #c5d8ef;
+    }
+
+    .hero-note {
+      max-width: 760px;
+      color: var(--text);
+      font-size: 1.02rem;
+    }
+
+    main {
+      padding: 10px 0 56px;
+    }
+
+    section {
+      padding: 22px 0;
+      scroll-margin-top: 92px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head .hint {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr;
+      gap: 18px;
+    }
+
+    .entry + .entry {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .entry-title {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .entry-meta {
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .entry-sub {
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    ul.clean {
+      margin: 8px 0 0 0;
+      padding-left: 20px;
+    }
+
+    ul.clean li + li { margin-top: 5px; }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .pub-item {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fbfdff;
+    }
+
+    .pub-title {
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .pub-authors, .pub-venue {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .highlight {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .highlight strong {
+      display: block;
+      font-size: 1.45rem;
+      margin-bottom: 4px;
+      color: var(--accent);
+    }
+
+    .footer {
+      padding: 22px 0 48px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-card, .two-col, .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 22px;
+      }
+      .hero-card {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        min-height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .nav-links {
+        gap: 12px;
+      }
+      .container {
+        width: min(var(--maxw), calc(100% - 22px));
+      }
+      .hero {
+        padding-top: 28px;
+      }
+      h1 {
+        font-size: 2.1rem;
+      }
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top">Rahul Kumar Yadav</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#coursework">Coursework</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="hero" id="top">
+      <div class="hero-card">
+        <div class="avatar" aria-label="Profile placeholder">
+          <!-- Replace with your image: <img src="assets/rahul.jpg" alt="Rahul Kumar Yadav"> -->
+          RKY
+        </div>
+        <div>
+          <h1>Rahul Kumar Yadav</h1>
+          <div class="subtitle">PhD Student, Machine Learning</div>
+          <div class="affiliation">Centre for Machine Intelligence and Data Science (C-MInDS), Indian Institute of Technology Bombay</div>
+          <div class="hero-actions">
+            <a class="chip" href="mailto:rahulky@iitb.ac.in">Email</a>
+            <a class="chip" href="https://github.com/Wiz-2" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="chip" href="https://scholar.google.com/citations?user=ZxOkbOUAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+            <a class="chip" href="https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="chip" href="#contact">CV / Contact</a>
+          </div>
+          <div class="hero-note">
+            I work on adversarial robustness in machine learning, with current interests spanning kernel methods, feature learning, and generalization in overparameterized models. My recent work studies robustness in kernel machines, neural networks, and adversarially trained systems.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="highlight-grid">
+        <div class="highlight">
+          <strong>Research</strong>
+          Robustness, kernels, adversarial ML, feature learning.
+        </div>
+        <div class="highlight">
+          <strong>Teaching</strong>
+          TA for DS303: Introduction to Machine Learning at IIT Bombay.
+        </div>
+        <div class="highlight">
+          <strong>Background</strong>
+          PhD at IIT Bombay; Integrated B.Tech + M.Tech in Computer Science from JNU.
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section id="about">
+        <div class="section-head">
+          <h2>About</h2>
+          <div class="hint">Short academic profile</div>
+        </div>
+        <div class="card">
+          <p>
+            I am a PhD student in Machine Learning at IIT Bombay, advised by Prof. Arjun Nitin Bhagoji and Prof. Parthe Pandit. My research interests include adversarial robustness, kernel methods, random feature models, and statistical learning theory.
+          </p>
+          <p>
+            I am particularly interested in understanding how kernel machines compare with neural networks under strong adversarial evaluation, and in building theoretically grounded, empirically reliable machine learning systems.
+          </p>
+        </div>
+      </section>
+
+      <section id="research">
+        <div class="section-head">
+          <h2>Research</h2>
+          <div class="hint">Current directions and projects</div>
+        </div>
+        <div class="two-col">
+          <div class="card">
+            <div class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">Adversarial Robustness in Kernel Methods and Neural Networks</h3>
+                <div class="entry-meta">2025 — Present</div>
+              </div>
+              <ul class="clean">
+                <li>Studying robustness of kernel machines compared to deep neural networks under strong adversarial attacks such as PGD, AutoAttack, and SPSA.</li>
+                <li>Investigating double descent and robust generalization gaps in overparameterized regimes.</li>
+              </ul>
+            </div>
+
+            <div class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">Neural Feature Ansatz in Adversarial Training</h3>
+              </div>
+              <ul class="clean">
+                <li>Analyzing the validity of neural feature ansatz for adversarially trained fully connected neural networks.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">Research Interests</h3>
+              </div>
+              <div class="pill-row">
+                <span class="pill">Adversarial robustness</span>
+                <span class="pill">Kernel methods</span>
+                <span class="pill">Random feature models</span>
+                <span class="pill">Statistical learning theory</span>
+                <span class="pill">Generalization</span>
+                <span class="pill">Optimization</span>
+              </div>
+            </div>
+
+            <div class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">Education</h3>
+              </div>
+              <div class="entry-sub">Indian Institute of Technology Bombay · 2025 — Present</div>
+              <div>PhD in Machine Learning</div>
+              <div class="entry-sub" style="margin-top:10px;">Jawaharlal Nehru University · 2019 — 2024</div>
+              <div>Integrated B.Tech + M.Tech in Computer Science</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <div class="section-head">
+          <h2>Publications</h2>
+          <div class="hint">Selected publication</div>
+        </div>
+        <div class="card">
+          <div class="pub-list">
+            <article class="pub-item">
+              <div class="pub-title">Combining Forth and Rust: A Robust and Efficient Approach for Low-Level System Programming</div>
+              <div class="pub-authors">Priya Gupta, Ravi Rahar, <strong>Rahul Kumar Yadav</strong>, Ajit Singh, Ramandeep, Sunil Kumar</div>
+              <div class="pub-venue">Engineering Proceedings, MDPI, 2024</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="teaching">
+        <div class="section-head">
+          <h2>Teaching</h2>
+          <div class="hint">Teaching assistantship</div>
+        </div>
+        <div class="card">
+          <div class="entry">
+            <div class="entry-head">
+              <h3 class="entry-title">Teaching Assistant — DS303: Introduction to Machine Learning</h3>
+            </div>
+            <div class="entry-sub">Indian Institute of Technology Bombay</div>
+            <ul class="clean">
+              <li>Assisted in assignments, evaluation, and student mentoring.</li>
+              <li>Supported conceptual understanding of core machine learning topics.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="coursework">
+        <div class="section-head">
+          <h2>Selected Coursework</h2>
+          <div class="hint">Advanced training relevant to current research</div>
+        </div>
+        <div class="card">
+          <div class="pill-row">
+            <span class="pill">Robust Machine Learning</span>
+            <span class="pill">Learning and Inference in High Dimensions</span>
+            <span class="pill">Statistical Learning Theory</span>
+            <span class="pill">Advances in Safety-Critical Machine Learning</span>
+            <span class="pill">Optimization</span>
+            <span class="pill">Linear Systems</span>
+            <span class="pill">Foundations of Intelligent and Learning Agents</span>
+            <span class="pill">Mathematics of Deep Learning</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="achievements">
+        <div class="section-head">
+          <h2>Achievements</h2>
+          <div class="hint">Selected academic achievements</div>
+        </div>
+        <div class="card">
+          <ul class="clean">
+            <li>Qualified UGC NET-JRF (99.94 percentile, Rank 18) in Computer Science and Applications.</li>
+            <li>Guardian at LeetCode (Top 0.97% globally).</li>
+            <li>GATE DA Score: 601; GATE CS Score: 577.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <div class="hint">Get in touch</div>
+        </div>
+        <div class="card">
+          <p><strong>Email:</strong> <a href="mailto:rahulky@iitb.ac.in">rahulky@iitb.ac.in</a></p>
+          <p><strong>Affiliation:</strong> Centre for Machine Intelligence and Data Science (C-MInDS), IIT Bombay</p>
+          <p><strong>Links:</strong> <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a> · <a href="https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+          <p><strong>CV:</strong>  <code>assets/Rahul_Kumar_Yadav_CV.pdf</code>.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> Rahul Kumar Yadav · Built for GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
