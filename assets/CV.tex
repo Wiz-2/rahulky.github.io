@@ -1,212 +1,831 @@
-% \documentclass[11pt]{article}
+% FORRT LaTeX Curriculum Vitae Template
+% Author: Emily Friedel
+% Website: https://experts.deakin.edu.au/65529-emily-friedel
+% Last updated: February 2026
 
-% \usepackage[a4paper, margin=1in]{geometry}
-% \usepackage{enumitem}
-% \usepackage{hyperref}
-% \usepackage{titlesec}
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely. No attribution is
+% required in any resulting documents. Please leave this notice and 
+% the above URL in the source code if you choose to redistribute this file.
 
-% \titleformat{\section}{\large\bfseries}{}{0em}{}
-% \setlist[itemize]{noitemsep, topsep=2pt}
+\documentclass{article}
 
-% \begin{document}
+\title{CV}
+\date{February 2026}
 
-% %---------------------- HEADER ----------------------%
-% \begin{center}
-%     {\LARGE \textbf{Rahul Kumar Yadav}} \\
-%     PhD Student, Machine Learning \\
-%     Centre for Machine Intelligence and Data Science (C-MInDS) \\
-%     Indian Institute of Technology Bombay \\
-%     \vspace{4pt}
-%     \href{mailto:your_email@gmail.com}{your_email@gmail.com} \quad
-%     \href{https://github.com/yourgithub}{GitHub} \quad
-%     \href{https://scholar.google.com}{Google Scholar} \quad
-%     \href{https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/}{LinkedIn}
-% \end{center}
+% Packages
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}
+\usepackage{enumitem}
+\usepackage[super]{nth}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{multicol}
+\usepackage{setspace}
 
-% %---------------------- RESEARCH INTERESTS ----------------------%
-% \section*{Research Interests}
-% Adversarial robustness in machine learning, kernel methods and random feature models, 
-% optimization and generalization in overparameterized regimes, robustness scaling laws, 
-% statistical learning theory.
+% Page layout
+\geometry{
+    body={7in, 9.0in},
+    left=0.7in,
+    top=0.75in
+}
 
-% %---------------------- EDUCATION ----------------------%
-% \section*{Education}
+\setstretch{0.75}
 
-% \textbf{Indian Institute of Technology Bombay} \hfill 2025 -- Present \\
-% PhD in Machine Learning \\
-% Advisors: Prof. Parthe Pandit, Prof. Arjun Nitin Bhagoji \\
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=Blue,
+    urlcolor=Blue,
+    citecolor=Blue,
+    filecolor=Blue
+}
 
-% \vspace{4pt}
+% Name and contact information
+\def\name{Rahul Kumar Yadav}
+\def\position{Ph.D. Candidate}
+\def\affiliation{Centre for Machine Intelligence and Data Science (C-MInDS)}
+\def\address{Indian Insititue of Technology Bombay}
+% \def\phone{Your phone number}
+\def\email{\href{mailto:rahulky@iitb.ac.in}{rahulky@iitb.ac.in}}
+\def\website{\href{https://wiz-2.github.io/rahulky.github.io/}{rahulky.github.io}}
+\def\LinkedIn{\href{https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/}{LinkedIn}}
 
-% \textbf{Jawaharlal Nehru University (JNU)} \hfill 2019 -- 2024 \\
-% Integrated B.Tech + M.Tech in Computer Science \\
+\begin{document}
 
-% %---------------------- PUBLICATIONS ----------------------%
-% \section*{Publications}
+% Header
+\begin{center}
+    {\huge \textbf{\name}}\\
+    \vspace{0.2em}
+    {\large \position}\\
+    \affiliation\\
+    \address\\
+    % \phone \, $\cdot$ \, \email\\
+    \email\\
+    \website \, $\cdot$ \, \LinkedIn
+\end{center}
 
-% \textit{Manuscripts in preparation}
-% \begin{itemize}
-%     \item Rahul Kumar Yadav, et al. \\
-%     ``Are Kernel Machines More Robust Than Neural Networks? Empirical and Theoretical Analysis''
-% \end{itemize}
+% \noindent\textit{This CV is just an example of some ways you can present your experience and expertise. You can adapt it by adding or removing sections or changing the order of sections. You may also need to modify it to fit with the favoured style in your country. Don't forget to remove any of the italicised tips!}
 
-% %---------------------- RESEARCH EXPERIENCE ----------------------%
+% Section: Education
+\section*{Education}
+\hrule
+\vspace{1em}
+\begin{itemize}[leftmargin=*]
+    \item[] \textbf{Indian Institute of Technology, Bombay}\\ PhD in Data Science and Artificial Intelligence  \hfill January 2025 -- Present\\
+    Thesis: \textit{Robustness in Kernel Machines}\\
+    Thesis supervisors: Prof. Arjun Bhagoji \& Prof. Parthe Pandit
+    
+    \item[] \textbf{Jawaharlal Nehru University, New Delhi}\\
+    B.Tech + M.Tech in Computer Science and Engineering \hfill July 2019 -- August 2024\\
+    M.tech Thesis: \textit{Email summarization using classical Machine Learning}
+
+\end{itemize}
+
+% Section: Research Interests
+\section*{Research Interests}
+\hrule
+\vspace{1em}
+\begin{itemize}[leftmargin=2em]
+    \item Robust Machine Learning
+    \item Training of Kernel Machines
+    % \item Research interest 3
+\end{itemize}
+
+% Section: Research Experience
 % \section*{Research Experience}
-
-% \textbf{Adversarial Robustness in Kernel Methods and Neural Networks} \hfill 2025 -- Present
-% \begin{itemize}
-%     \item Studying robustness of kernel machines compared to deep neural networks under strong adversarial attacks (PGD, AutoAttack, SPSA).
-%     \item Developed evaluation framework across MNIST variants and SVHN datasets.
-%     \item Investigating double descent and robust generalization gap in overparameterized settings.
+% \hrule
+% \vspace{1em}
+% \begin{itemize}[leftmargin=*]
+%     \item[] \textbf{Research role}, University or other research organisation \hfill Month 20XX -- Month 20XX\\
+%     Supervisor/Manager: Dr. Name
+%     \begin{itemize}
+%         \item Put a description of your main duties or accomplishments here
+%         \item Put a description of your main duties or accomplishments here
+%         \item Put a description of your main duties or accomplishments here
+%     \end{itemize}
 % \end{itemize}
 
-% \vspace{4pt}
-
-% \textbf{Recursive Feature Machines and Kernel Learning}
-% \begin{itemize}
-%     \item Implemented EGOP-based Mahalanobis metric learning for adaptive kernel construction.
-%     \item Built scalable pipeline for iterative kernel refinement using PyTorch.
+% Section: Supervision
+% \section*{Supervision}
+% \hrule
+% \vspace{1em}
+% \begin{itemize}[leftmargin=*]
+%     \item[] \textbf{Role (e.g., Primary Supervisor)}, University, Country \hfill Month 20XX -- Present\\
+%     Student: Student Name\\
+%     Course: Course Name\\
+%     Thesis: \textit{Title}
+    
+%     \item[] \textbf{Role (e.g., Associate Supervisor)}, University, Country \hfill Month 20XX -- Present\\
+%     Student: Student Name\\
+%     Course: Course Name\\
+%     Thesis: \textit{Title}
 % \end{itemize}
 
-% \vspace{4pt}
+% Section: Service roles
+% \section*{Service}
+% \hrule
+% \vspace{1em}
 
-% \textbf{Adversarial Attacks on Tabular Data (CAFA)}
-% \begin{itemize}
-%     \item Analyzed cost-aware adversarial attacks under database constraints.
-%     \item Studied projection mechanisms and feasibility constraints in adversarial settings.
+% \begin{itemize}[leftmargin=*]
+%     \item[] \textbf{Service role e.g., article peer-review} \hfill Month 20XX -- Month 20XX
+%     \begin{itemize}
+%         \item Put a summary of your activities here
+%     \end{itemize}
+
+%     \item[] \textbf{Service role e.g., conference or event organisation} \hfill Month 20XX -- Month 20XX
+%     \begin{itemize}
+%         \item Put a summary of your activities here
+%     \end{itemize}
+
 % \end{itemize}
 
-% %---------------------- PROJECTS ----------------------%
-% \section*{Projects}
+% Section: Volunteer Roles
+% \section*{Volunteer Roles}
+% \hrule
+% \vspace{1em}
 
-% \textbf{Kernel vs Neural Network Benchmarking}
-% \begin{itemize}
-%     \item Unified framework for evaluating robustness across kernels, RFFs, and neural networks.
-%     \item Implemented adversarial evaluation under $L_\infty$ and $L_2$ threat models.
+% \begin{itemize}[leftmargin=*]
+%     \item[] \textbf{Role}, Organisation \hfill Month 20XX -- Month 20XX
+%     \begin{itemize}
+%         \item Put a description of your main duties or accomplishments here
+%     \end{itemize}
+    
+%     \item[] \textbf{Role}, Organisation \hfill Month 20XX -- Month 20XX
+%     \begin{itemize}
+%         \item Put a description of your main duties or accomplishments here
+%     \end{itemize}
+
 % \end{itemize}
 
-% \vspace{4pt}
+% Section: Other Relevant Experience
+% \section*{Other Relevant Experience}
+% \hrule
+% \vspace{1em}
+% \textit{You may also want to include FORRT work under 'Other Relevant Experience'.}
 
-% \textbf{Full-Stack Real-Time Application}
-% \begin{itemize}
-%     \item Developed Flask + React application with WebSocket-based real-time updates.
+% \begin{itemize}[leftmargin=*]
+%     \item[] \textbf{Role}, Organisation \hfill Month 20XX -- Month 20XX
+%     \begin{itemize}
+%         \item Put a description of your main duties or accomplishments here
+%     \end{itemize}
+
+%     \item[] \textbf{Role}, Organisation \hfill Month 20XX -- Month 20XX
+%     \begin{itemize}
+%         \item Put a description of your main duties or accomplishments here
+%     \end{itemize}
+
 % \end{itemize}
 
-% %---------------------- TECHNICAL SKILLS ----------------------%
-% \section*{Technical Skills}
+% Section: Community Engagement
+% \section*{Community Engagement}
+% \hrule
+% \vspace{1em}
+% \textit{Community engagement may be important for certain roles or grant applications, so it may be worth highlighting in a separate section.}
 
-% \textbf{Languages:} Python, C++, SQL \\
-% \textbf{Frameworks:} PyTorch, TensorFlow (basic), Flask, React \\
-% \textbf{Tools:} AutoAttack, NumPy, Pandas, Matplotlib, Git, Slurm \\
-% \textbf{Core Areas:} Machine Learning, Adversarial ML, Kernel Methods, Optimization
-
-% %---------------------- ACHIEVEMENTS ----------------------%
-% \section*{Achievements}
-
-% \begin{itemize}
-%     \item Selected for PhD in Machine Learning at IIT Bombay.
-%     \item Completed Integrated B.Tech + M.Tech in Computer Science from JNU.
+% \begin{itemize}[leftmargin=*]
+%     \item[] \textbf{Name of project}, University/Organisation
+%     \hfill Month 20XX -- Present
+%     \begin{itemize}
+%         \item Put a description of your community engagement activities here
+%     \end{itemize}
+    
+%     \item[] \textbf{Name of project}, University/Organisation
+%     \hfill Month 20XX -- Present
+%     \begin{itemize}
+%         \item Put a description of your community engagement activities here
+%     \end{itemize}
 % \end{itemize}
 
-% %---------------------- END ----------------------%
-% \end{document}
+% Section: Peer-Reviewed Publications
+% \section*{Peer-Reviewed Publications}
+% \hrule
+% \vspace{1em}
+% \textit{If you have enough publications, you can have separate sections for each type (e.g., peer-reviewed, book chapters, editorials \& op-eds etc.).}
+% \\\\
+% \textit{We have included an example of how you can incorporate open science badges into your CV. If you don't want to use these, apply the formatting used in the section on Preprints and Manuscripts in Preparation instead.}
 
-% \documentclass[11pt]{article}
+% \newcommand{\badgeH}{1cm}
 
-% \usepackage[a4paper, margin=1in]{geometry}
-% \usepackage{enumitem}
-% \usepackage{hyperref}
-% \usepackage{titlesec}
-
-% \titleformat{\section}{\large\bfseries}{}{0em}{}
-% \setlist[itemize]{noitemsep, topsep=2pt}
-
-% \begin{document}
-
-% %---------------------- HEADER ----------------------%
 % \begin{center}
-%     {\LARGE \textbf{Rahul Kumar Yadav}} \\
-%     PhD Student, Machine Learning \\
-%     Centre for Machine Intelligence and Data Science (C-MInDS) \\
-%     Indian Institute of Technology Bombay \\
-%     \vspace{4pt}
-%     \href{mailto:rahulky@iitb.ac.in}{rahulky@iitb.ac.in} \quad
-%     \href{https://github.com/Wiz-2}{GitHub} \quad
-%     \href{https://scholar.google.com/citations?user=ZxOkbOUAAAAJ&hl=en}{Google Scholar} \quad
-%     \href{https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/}{LinkedIn}
+%     \begin{minipage}{0.18\textwidth}
+%         \centering
+%         \includegraphics[scale=0.2]{badges/opendata.png}\\
+%         \footnotesize Open Data
+%     \end{minipage}
+%     \begin{minipage}{0.18\textwidth}
+%         \centering
+%         \includegraphics[scale=0.2]{badges/openmaterial.png}\\
+%         \footnotesize Open Materials
+%     \end{minipage}
+%     \begin{minipage}{0.18\textwidth}
+%         \centering
+%         \includegraphics[scale=0.2]{badges/opencode.png}\\
+%         \footnotesize Open Code
+%     \end{minipage}
+%     \begin{minipage}{0.18\textwidth}
+%         \centering
+%         \includegraphics[scale=0.2]{badges/preregistered.png}\\
+%         \footnotesize Preregistered
+%     \end{minipage}
+%     \begin{minipage}{0.18\textwidth}
+%         \centering
+%         \includegraphics[scale=0.2]{badges/preregisteredplus.png}\\
+%         \footnotesize Preregistered+
+%     \end{minipage}
 % \end{center}
 
-% %---------------------- RESEARCH INTERESTS ----------------------%
-% \section*{Research Interests}
-% Adversarial robustness in machine learning, kernel methods and random feature models, 
-% optimization and generalization in overparameterized regimes, robustness scaling laws, 
-% statistical learning theory.
+% \begin{itemize}[leftmargin=*]
+%     \item[]
+%     \hspace{-14pt}
+%     \begin{minipage}[t]{0.14\textwidth}
+%         \vspace{4pt}
+%         \centering
+%         \includegraphics[scale=0.15]{badges/opendata.png}\hspace{2pt}%
+%         \includegraphics[scale=0.15]{badges/openmaterial.png}\hspace{2pt}%
+%         \includegraphics[scale=0.15]{badges/opencode.png}%
+%     \end{minipage}%
+%     \begin{minipage}[t]{0.86\textwidth}
+%         \noindent
+%         \textbf{Author, A.}, Author, B., Author, C., \& Author, D. (2025). Put the title of your peer-reviewed paper here. \textit{Journal Name}, \textit{1}(2), 123--123. \href{https://doi.org}{doi.org/111.111}
+%     \end{minipage}
 
-% %---------------------- EDUCATION ----------------------%
-% \section*{Education}
+%     \item[]
+%     \hspace{-14pt}
+%     \begin{minipage}[t]{0.14\textwidth}
+%         \vspace{4pt}
+%         \centering
+%         \includegraphics[scale=0.15]{badges/opendata.png}\hspace{2pt}%
+%         \includegraphics[scale=0.15]{badges/preregisteredplus.png}%
+%     \end{minipage}%
+%     \begin{minipage}[t]{0.86\textwidth}
+%         \noindent
+%         Author, B., \textbf{Author, A.}, Author, C., \& Author, D. (2024). Put the title of your peer-reviewed paper here. \textit{Journal Name}, \textit{2}(3), 456--456. \href{https://doi.org}{doi.org/222.222}
+%     \end{minipage}
 
-% \textbf{Indian Institute of Technology Bombay} \hfill 2025 -- Present \\
-% PhD in Machine Learning \\
-% Advisors: Prof. Arjun Nitin Bhagoji, Prof. Parthe Pandit \\
+%     \item[]
+%     \hspace{-14pt}
+%     \begin{minipage}[t]{0.14\textwidth}
+%         \vspace{4pt}
+%         \centering
+%         \includegraphics[scale=0.15]{badges/opendata.png}\hspace{2pt}%
+%         \includegraphics[scale=0.15]{badges/openmaterial.png}\hspace{2pt}%
+%         \includegraphics[scale=0.15]{badges/opencode.png}\hspace{2pt}%
+%         \includegraphics[scale=0.15]{badges/preregistered.png}%
+%     \end{minipage}%
+%     \begin{minipage}[t]{0.86\textwidth}
+%         \noindent
+%         Author, B., Author, C., \textbf{Author, A.}, \& Author, D. (2024). Put the title of your peer-reviewed paper here. \textit{Journal Name}, \textit{3}(4), 789--789. \href{https://doi.org}{doi.org/333.333}
+%     \end{minipage}
+% \end{itemize}
 
-% \vspace{4pt}
+% Section: Preprints and Manuscripts in Preparation
+\section*{Preprints and Manuscripts in Preparation}
+\hrule
+\vspace{1em}
 
-% \textbf{Jawaharlal Nehru University (JNU)} \hfill 2019 -- 2024 \\
-% Integrated B.Tech + M.Tech in Computer Science \\
+\begin{itemize}[leftmargin=*]
+    % \item[] \noindent
+    % \textbf{Author, A.}, Author, B., Author, C., \& Author, D. (2026). Put the title of your preprint here [Preprint]. \href{https://doi.org}{doi.org/444.444}
 
-% %---------------------- PUBLICATIONS ----------------------%
-% \section*{Publications}
+    \item[] \noindent
+    \textbf{Rahul Kumar Yadav}, Tunir Ghosh, Sudhendu Ahir, Parthe Pandit \& Arjun Bhagoji (2026), Adversarial Robustness of Kernel Machines (A Comprehensive Empirical Analysis) [Manuscript in preparation].
+\end{itemize}
+
+
+
+% Section: Acknowledged Contributions
+% \section*{Acknowledged Contributions}
+% \hrule
+% \vspace{1em}
+% \textit{This section may be helpful for people whose roles or experience level means they do not have many authored papers but have made important contributions to publications and been acknowledged for them.}
+
+% \begin{itemize}[leftmargin=*]
+%     \item[] \noindent
+%     \textbf{Search strategy development for:}\\
+%     Author, A., Author, B., Author, C., \& Author, D. (2023). Put the title of the paper you worked on here. \textit{Journal Name}, \textit{6}(7), 1234--1234. \href{https://doi.org}{doi.org/555.555}
+
+%     \item[] \noindent
+%     \textbf{Critical discussion/manuscript check for:}\\
+%     Author, A., Author, B., Author, C., \& Author, D. (2024). Put the title of the paper you worked on here. \textit{Journal Name}, \textit{8}(9), 2345--2345. \href{https://doi.org}{doi.org/666.666}
+
+%     \item[] \noindent
+%     \textbf{Data collection/development of stimulus materials for:}\\
+%     Author, A., Author, B., Author, C., \& Author, D. (2025). Put the title of the paper you worked on here. \textit{Journal Name}, \textit{9}(1), 3456--3456. \href{https://doi.org}{doi.org/777.777}
+% \end{itemize}
+
+% Section: Conference Presentations
+% \section*{Conference Presentations}
+% \hrule
+% \vspace{1em}
+
+% \begin{itemize}[leftmargin=*]
+%     \item[] \textbf{Author, A.} \& Author, B. (20XX). \textit{Title of presentation} [Invited oral presentation]. \textit{Name of Conference}, Location.
+
+%     \item[] \textbf{Author, A.} (20XX). \textit{Title of poster} [Poster]. \textit{Name of Conference}, Location.
+
+%     \item[] Author, B., \textbf{Author, A.}, \& Author, C. (20XX). \textit{Title of hackathon} [Hackathon]. \textit{Name of Conference}, Location.
+% \end{itemize}
+
+% Section: Non-Traditional Research Outputs
+% \section*{Non-Traditional Research Outputs}
+% \hrule
+% \vspace{1em}
+% \textit{'Non-Traditional Research Outputs' is another section in which you might want to showcase your FORRT contributions.}
+
+% \begin{itemize}[leftmargin=*]
+
+%     \item[] \textbf{Software Developer}, \href{https://nameofproject.com}{Name of project}
+%     \begin{itemize}
+%         \item Put a description of the output here
+%     \end{itemize}
+
+%     \item[] \textbf{Lay Summary}, \href{https://nameofproject.com}{Name of project}
+%     \begin{itemize}
+%         \item Put a description of the output here
+%     \end{itemize}
+
+%     \item[] \textbf{Creative Research Translation}, \href{https://nameofproject.com}{Name of project}
+%     \begin{itemize}
+%         \item Put a description of the output here
+%     \end{itemize}
+% \end{itemize}
+
+% Section: Grants and Funding
+% \section*{Grants and Funding}
+% \hrule
+% \vspace{1em}
+% \textit{You can also list non-funded applications here as these take considerable time and effort and show willingness to pursue opportunities.}
+
+% \begin{itemize}[leftmargin=*]
+%     \item[] Name of grant, Amount, Outcome: Funded/Unfunded \hfill 20XX
+%     \item[] Name of grant, Amount, Outcome: Funded/Unfunded \hfill 20XX
+% \end{itemize}
+
+% Section: Awards and Fellowships
+\section*{Fellowships, Awards, and Honours}
+\hrule
+\vspace{1em}
+
+\begin{itemize}[leftmargin=*]
+    \item[] GATE PG Scholarship, AICTE \hfill 2023-2024
+    \item[] Junior Research Fellowship (\textit{99.94 percentile}) in Computer Science and Applications, UGC-NET \hfill 2024
+    \item [] Guardian @\href{https://leetcode.com/u/user0434y/}{LeetCode }(Top \textit{0.99\%} globally)
+\end{itemize}
+
+% Section: Poster Presentation
+\section*{Poster Presentations}
+\hrule
+\vspace{1em}
+\begin{itemize}[leftmargin=*]
+    \item[] "Analysis of Robustness of Kernel Machines" - TechConnect 2025, IIT Bombay \hfill 2025
+\end{itemize}
+
+% Section: Professional Affiliations
+\section*{Professional Affiliations}
+\hrule
+\vspace{1em}
+
+\begin{itemize}[leftmargin=*]
+    \item[] Data Structures and Algorithms intern at OpenGenus  \hfill April 2022 -- Dec 2022
+    % \item[] Name of organisation, membership type/role \hfill Month 20XX -- Present
+\end{itemize}
+
+
+% Section: Research/Technical Skills
+\section*{Research/Technical Skills}
+\hrule
+\vspace{1em}
+
+\begin{itemize}[leftmargin=*]
+    \item[] \textbf{Research} 
+        \begin{itemize}
+        Robust machine learning, Kernel Methods, Optimization
+        \end{itemize}
+    \item[] \textbf{Technical Skills}
+        \begin{itemize}
+        Python, C, C++, NumPy, Pytorch
+        \end{itemize}
+\end{itemize}
+
+% Section: Teaching Experience
+\section*{Teaching Experience}
+\hrule
+\vspace{1em}
+\begin{itemize}[leftmargin=*]
+    \item[] \textbf{Teaching Assistant}, DS 303 Introduction to Machine Learning,\\ C-MInDS, Indian Institute of Technology, Bombay \hfill Jan 2026 -- May 2026
+    \item[] \textbf{Teaching Assistant}, DS 203 Programming for Data Science,\\ C-MInDS, Indian Institute of Technology, Bombay \hfill July 2026 -- Nov 2026
+\end{itemize}
+
+\end{document}
+% Section: Professional Development/Trainings
+\section*{Professional Development/Trainings}
+\hrule
+\vspace{1em}
+
+\begin{itemize}[leftmargin=*]
+    \item[] Name of training, \textit{training organisation} \hfill Month 20XX
+    \item[] Name of training, \textit{training organisation} \hfill Month 20XX
+\end{itemize}
+
+% Section: Referees
+\section*{Referees}
+\hrule
+\vspace{1em}
+
+\begin{minipage}{\textwidth}
+    \begin{multicols}{2}
+        \hspace*{1em}%
+        \begin{minipage}[t]{\linewidth}
+            \textbf{Professor XXX}\\
+            \href{https://theirwebsite.com}{theirwebsite.com}\\
+            Role (e.g., Primary Advisor)\\
+            Brief description of expertise\\
+            telephone number\\
+            \href{mailto:advisor@uni.edu}{advisor@uni.edu}\\
+        \end{minipage}
+
+        \columnbreak
+
+        \begin{minipage}[t]{\linewidth}
+            \textbf{Dr. XXX}\\
+            \href{https://theirwebsite.com}{theirwebsite.com}\\
+            Role\\
+            Brief description of expertise\\
+            telephone number\\
+            \href{mailto:advisor@uni.edu.au}{advisor@uni.edu.au}\\
+        \end{minipage}
+    \end{multicols}
+\end{minipage}
+
+% Footer
+\begin{center}
+    \begin{footnotesize}
+        Last updated: \today
+    \end{footnotesize}
+\end{center}
+
+\end{document}
+
+
+
+
+
+% ========================================================================================================================================================================================================
+
+% ========================================================================================================================================================================================================
+
+% ========================================================================================================================================================================================================
+
+
+
+
+
+
+
+% % \documentclass[11pt]{article}
+
+% % \usepackage[a4paper, margin=1in]{geometry}
+% % \usepackage{enumitem}
+% % \usepackage{hyperref}
+% % \usepackage{titlesec}
+
+% % \titleformat{\section}{\large\bfseries}{}{0em}{}
+% % \setlist[itemize]{noitemsep, topsep=2pt}
+
+% % \begin{document}
+
+% % %---------------------- HEADER ----------------------%
+% % \begin{center}
+% %     {\LARGE \textbf{Rahul Kumar Yadav}} \\
+% %     PhD Student, Machine Learning \\
+% %     Centre for Machine Intelligence and Data Science (C-MInDS) \\
+% %     Indian Institute of Technology Bombay \\
+% %     \vspace{4pt}
+% %     \href{mailto:your_email@gmail.com}{your_email@gmail.com} \quad
+% %     \href{https://github.com/yourgithub}{GitHub} \quad
+% %     \href{https://scholar.google.com}{Google Scholar} \quad
+% %     \href{https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/}{LinkedIn}
+% % \end{center}
+
+% % %---------------------- RESEARCH INTERESTS ----------------------%
+% % \section*{Research Interests}
+% % Adversarial robustness in machine learning, kernel methods and random feature models, 
+% % optimization and generalization in overparameterized regimes, robustness scaling laws, 
+% % statistical learning theory.
+
+% % %---------------------- EDUCATION ----------------------%
+% % \section*{Education}
+
+% % \textbf{Indian Institute of Technology Bombay} \hfill 2025 -- Present \\
+% % PhD in Machine Learning \\
+% % Advisors: Prof. Parthe Pandit, Prof. Arjun Nitin Bhagoji \\
+
+% % \vspace{4pt}
+
+% % \textbf{Jawaharlal Nehru University (JNU)} \hfill 2019 -- 2024 \\
+% % Integrated B.Tech + M.Tech in Computer Science \\
+
+% % %---------------------- PUBLICATIONS ----------------------%
+% % \section*{Publications}
 
 % % \textit{Manuscripts in preparation}
 % % \begin{itemize}
 % %     \item Rahul Kumar Yadav, et al. \\
 % %     ``Are Kernel Machines More Robust Than Neural Networks? Empirical and Theoretical Analysis''
 % % \end{itemize}
+
+% % %---------------------- RESEARCH EXPERIENCE ----------------------%
+% % \section*{Research Experience}
+
+% % \textbf{Adversarial Robustness in Kernel Methods and Neural Networks} \hfill 2025 -- Present
+% % \begin{itemize}
+% %     \item Studying robustness of kernel machines compared to deep neural networks under strong adversarial attacks (PGD, AutoAttack, SPSA).
+% %     \item Developed evaluation framework across MNIST variants and SVHN datasets.
+% %     \item Investigating double descent and robust generalization gap in overparameterized settings.
+% % \end{itemize}
+
+% % \vspace{4pt}
+
+% % \textbf{Recursive Feature Machines and Kernel Learning}
+% % \begin{itemize}
+% %     \item Implemented EGOP-based Mahalanobis metric learning for adaptive kernel construction.
+% %     \item Built scalable pipeline for iterative kernel refinement using PyTorch.
+% % \end{itemize}
+
+% % \vspace{4pt}
+
+% % \textbf{Adversarial Attacks on Tabular Data (CAFA)}
+% % \begin{itemize}
+% %     \item Analyzed cost-aware adversarial attacks under database constraints.
+% %     \item Studied projection mechanisms and feasibility constraints in adversarial settings.
+% % \end{itemize}
+
+% % %---------------------- PROJECTS ----------------------%
+% % \section*{Projects}
+
+% % \textbf{Kernel vs Neural Network Benchmarking}
+% % \begin{itemize}
+% %     \item Unified framework for evaluating robustness across kernels, RFFs, and neural networks.
+% %     \item Implemented adversarial evaluation under $L_\infty$ and $L_2$ threat models.
+% % \end{itemize}
+
+% % \vspace{4pt}
+
+% % \textbf{Full-Stack Real-Time Application}
+% % \begin{itemize}
+% %     \item Developed Flask + React application with WebSocket-based real-time updates.
+% % \end{itemize}
+
+% % %---------------------- TECHNICAL SKILLS ----------------------%
+% % \section*{Technical Skills}
+
+% % \textbf{Languages:} Python, C++, SQL \\
+% % \textbf{Frameworks:} PyTorch, TensorFlow (basic), Flask, React \\
+% % \textbf{Tools:} AutoAttack, NumPy, Pandas, Matplotlib, Git, Slurm \\
+% % \textbf{Core Areas:} Machine Learning, Adversarial ML, Kernel Methods, Optimization
+
+% % %---------------------- ACHIEVEMENTS ----------------------%
+% % \section*{Achievements}
+
+% % \begin{itemize}
+% %     \item Selected for PhD in Machine Learning at IIT Bombay.
+% %     \item Completed Integrated B.Tech + M.Tech in Computer Science from JNU.
+% % \end{itemize}
+
+% % %---------------------- END ----------------------%
+% % \end{document}
+
+% % \documentclass[11pt]{article}
+
+% % \usepackage[a4paper, margin=1in]{geometry}
+% % \usepackage{enumitem}
+% % \usepackage{hyperref}
+% % \usepackage{titlesec}
+
+% % \titleformat{\section}{\large\bfseries}{}{0em}{}
+% % \setlist[itemize]{noitemsep, topsep=2pt}
+
+% % \begin{document}
+
+% % %---------------------- HEADER ----------------------%
+% % \begin{center}
+% %     {\LARGE \textbf{Rahul Kumar Yadav}} \\
+% %     PhD Student, Machine Learning \\
+% %     Centre for Machine Intelligence and Data Science (C-MInDS) \\
+% %     Indian Institute of Technology Bombay \\
+% %     \vspace{4pt}
+% %     \href{mailto:rahulky@iitb.ac.in}{rahulky@iitb.ac.in} \quad
+% %     \href{https://github.com/Wiz-2}{GitHub} \quad
+% %     \href{https://scholar.google.com/citations?user=ZxOkbOUAAAAJ&hl=en}{Google Scholar} \quad
+% %     \href{https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/}{LinkedIn}
+% % \end{center}
+
+% % %---------------------- RESEARCH INTERESTS ----------------------%
+% % \section*{Research Interests}
+% % Adversarial robustness in machine learning, kernel methods and random feature models, 
+% % optimization and generalization in overparameterized regimes, robustness scaling laws, 
+% % statistical learning theory.
+
+% % %---------------------- EDUCATION ----------------------%
+% % \section*{Education}
+
+% % \textbf{Indian Institute of Technology Bombay} \hfill 2025 -- Present \\
+% % PhD in Machine Learning \\
+% % Advisors: Prof. Arjun Nitin Bhagoji, Prof. Parthe Pandit \\
+
+% % \vspace{4pt}
+
+% % \textbf{Jawaharlal Nehru University (JNU)} \hfill 2019 -- 2024 \\
+% % Integrated B.Tech + M.Tech in Computer Science \\
+
+% % %---------------------- PUBLICATIONS ----------------------%
+% % \section*{Publications}
+
+% % % \textit{Manuscripts in preparation}
+% % % \begin{itemize}
+% % %     \item Rahul Kumar Yadav, et al. \\
+% % %     ``Are Kernel Machines More Robust Than Neural Networks? Empirical and Theoretical Analysis''
+% % % \end{itemize}
+% % \begin{itemize}
+% %     \item Priya Gupta, Ravi Rahar, Rahul Kumar Yadav, Ajit Singh, Ramandeep, Sunil Kumar \\
+% %     ``Combining Forth and Rust: A Robust and Efficient Approach for Low-Level System Programming''
+% % \end{itemize}
+% % %---------------------- RESEARCH EXPERIENCE ----------------------%
+% % \section*{Research Experience}
+
+% % \textbf{Adversarial Robustness in Kernel Methods and Neural Networks} \hfill 2025 -- Present
+% % \begin{itemize}
+% %     \item Studying robustness of kernel machines compared to deep neural networks under strong adversarial attacks (PGD, AutoAttack, SPSA).
+% %     \item Developed evaluation framework across MNIST variants and SVHN datasets.
+% %     \item Investigating double descent and robust generalization gap in overparameterized settings.
+% % \end{itemize}
+
+% % \vspace{4pt}
+
+% % \textbf{Recursive Feature Machines and Kernel Learning}
+% % \begin{itemize}
+% %     \item Implemented EGOP-based Mahalanobis metric learning for adaptive kernel construction.
+% %     \item Built scalable pipeline for iterative kernel refinement using PyTorch.
+% % \end{itemize}
+
+% % \vspace{4pt}
+
+% % \textbf{Adversarial Attacks on Tabular Data (CAFA)}
+% % \begin{itemize}
+% %     \item Analyzed cost-aware adversarial attacks under database constraints.
+% %     \item Studied projection mechanisms and feasibility constraints in adversarial settings.
+% % \end{itemize}
+
+% % %---------------------- PROJECTS ----------------------%
+% % \section*{Projects}
+
+% % \textbf{Kernel vs Neural Network Benchmarking}
+% % \begin{itemize}
+% %     \item Unified framework for evaluating robustness across kernels, RFFs, and neural networks.
+% %     \item Implemented adversarial evaluation under $L_\infty$ and $L_2$ threat models.
+% % \end{itemize}
+
+% % \vspace{4pt}
+
+% % \textbf{Full-Stack Real-Time Application}
+% % \begin{itemize}
+% %     \item Developed Flask + React application with WebSocket-based real-time updates.
+% % \end{itemize}
+
+% % %---------------------- TECHNICAL SKILLS ----------------------%
+% % \section*{Technical Skills}
+
+% % \textbf{Languages:} Python, C++, SQL \\
+% % \textbf{Frameworks:} PyTorch, TensorFlow (basic), Flask, React \\
+% % \textbf{Tools:} AutoAttack, NumPy, Pandas, Matplotlib, Git, Slurm \\
+% % \textbf{Core Areas:} Machine Learning, Adversarial ML, Kernel Methods
+
+% % %---------------------- ACHIEVEMENTS ----------------------%
+% % \section*{Achievements}
+
+% % \begin{itemize}
+% %     \item Selected for PhD in Machine Learning at IIT Bombay.
+% %     \item Completed Integrated B.Tech + M.Tech in Computer Science from JNU.
+% %     \item Guardian @Leetcode, Among Top 0.97\% coders on the platform
+% %     \item Qualified for UGC NET-JRF with 99.94 percentile(18th Rank) in the subject of Computer Science and Applications
+% % \end{itemize}
+
+% % %---------------------- END ----------------------%
+% % \end{document}
+
+% \documentclass[11pt]{article}
+
+% \usepackage[a4paper, margin=1in]{geometry}
+% \usepackage{enumitem}
+% \usepackage{hyperref}
+% \usepackage{xcolor}
+% \usepackage{titlesec}
+% \usepackage{tabularx}
+% \usepackage{hyperref}
+
+% %---------------------- STYLE ----------------------%
+% \hypersetup{
+%     colorlinks=true,
+%     urlcolor=blue,
+%     linkcolor=black
+% }
+
+% \titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+% \setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
+
+% \renewcommand{\familydefault}{\sfdefault}
+
+% %---------------------- DOCUMENT ----------------------%
+% \begin{document}
+
+% %---------------------- HEADER ----------------------%
+% \begin{center}
+%     {\LARGE \textbf{Rahul Kumar Yadav}}\\[4pt]
+%     \normalsize PhD candidate in DS \& AI   \\
+%     Centre for Machine Intelligence and Data Science (C-MInDS) \\
+%     Indian Institute of Technology Bombay \\[6pt]
+
+%     \small
+%     \href{mailto:rahulky@iitb.ac.in}{rahulky@iitb.ac.in} \quad | \quad
+%     \href{https://github.com/yourgithub}{GitHub} \quad | \quad
+%     \href{https://scholar.google.com}{Google Scholar} \quad | \quad
+%     \href{https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/}{LinkedIn}\quad | \quad
+%     \href{https://wiz-2.github.io/rahulky.github.io/}{Website}
+% \end{center}
+
+% \vspace{0pt}
+
+% %---------------------- RESEARCH INTERESTS ----------------------%
+% \section*{Research Interests}
+% Adversarial robustness in machine learning, kernel methods,  
+% generalization in overparameterized regimes.
+
+% %---------------------- EDUCATION ----------------------%
+% \section*{Education}
+
+% \begin{tabularx}{\textwidth}{X r}
+% \textbf{Indian Institute of Technology Bombay} & 2025 -- Present \\
+% PhD in Machine Learning & \\
+% Advisors: Prof. Arjun Nitin Bhagoji, Prof. Parthe Pandit & \\[6pt]
+
+% \textbf{Jawaharlal Nehru University (JNU)} & 2019 -- 2024 \\
+% Integrated B.Tech + M.Tech in Computer Science & \\
+% \end{tabularx}
+
+% %---------------------- COURSEWORK ----------------------%
+% \section*{Coursework}
+% Robust Machine Learning, Learning and Inference in High Dimensions, Statistical Learning Theory,  Advances in Safety Critical Machine Learning, Optimization, Linear Systems, Foundations of Intelligent and Learning Agents, Mathematics of Deep Learning
+
+% %---------------------- PUBLICATIONS ----------------------%
+% \section*{Publications}
+
 % \begin{itemize}
-%     \item Priya Gupta, Ravi Rahar, Rahul Kumar Yadav, Ajit Singh, Ramandeep, Sunil Kumar \\
+%     \item Priya Gupta, Ravi Rahar, \textbf{Rahul Kumar Yadav}, Ajit Singh, Ramandeep, Sunil Kumar \\
 %     ``Combining Forth and Rust: A Robust and Efficient Approach for Low-Level System Programming''
+%     \href{https://www.mdpi.com/2673-4591/59/1/54}{\textit{Engineering Proceedings (MDPI), 2024}}. \\
+    
 % \end{itemize}
+
 % %---------------------- RESEARCH EXPERIENCE ----------------------%
 % \section*{Research Experience}
 
-% \textbf{Adversarial Robustness in Kernel Methods and Neural Networks} \hfill 2025 -- Present
+% % \begin{tabularx}{\textwidth}{X r}
+% \textbf{Adversarial Robustness in Kernel Methods and Neural Networks}\\
+% % \end{tabularx}
 % \begin{itemize}
 %     \item Studying robustness of kernel machines compared to deep neural networks under strong adversarial attacks (PGD, AutoAttack, SPSA).
-%     \item Developed evaluation framework across MNIST variants and SVHN datasets.
-%     \item Investigating double descent and robust generalization gap in overparameterized settings.
+%     \item Investigating double descent and robust generalization gap in overparameterized regimes.
 % \end{itemize}
 
-% \vspace{4pt}
+% \vspace{0pt}
 
-% \textbf{Recursive Feature Machines and Kernel Learning}
+% \textbf{Neural Feature Ansatz in adversarial training of neural networks}
 % \begin{itemize}
-%     \item Implemented EGOP-based Mahalanobis metric learning for adaptive kernel construction.
-%     \item Built scalable pipeline for iterative kernel refinement using PyTorch.
+%     \item Analysing the validity of Neural Feature Ansatz for adversarially trained fully connected neural networks
 % \end{itemize}
 
-% \vspace{4pt}
-
-% \textbf{Adversarial Attacks on Tabular Data (CAFA)}
-% \begin{itemize}
-%     \item Analyzed cost-aware adversarial attacks under database constraints.
-%     \item Studied projection mechanisms and feasibility constraints in adversarial settings.
-% \end{itemize}
+% \vspace{0pt}
 
 % %---------------------- PROJECTS ----------------------%
-% \section*{Projects}
+% % \section*{Projects}
 
-% \textbf{Kernel vs Neural Network Benchmarking}
-% \begin{itemize}
-%     \item Unified framework for evaluating robustness across kernels, RFFs, and neural networks.
-%     \item Implemented adversarial evaluation under $L_\infty$ and $L_2$ threat models.
-% \end{itemize}
+% % \textbf{Kernel vs Neural Network Benchmarking}
+% % \begin{itemize}
+% %     \item Built unified framework to evaluate robustness across kernels, random feature models, and neural networks.
+% %     \item Implemented adversarial evaluation under $L_\infty$ and $L_2$ threat models.
+% % \end{itemize}
 
-% \vspace{4pt}
+% % \vspace{4pt}
 
-% \textbf{Full-Stack Real-Time Application}
-% \begin{itemize}
-%     \item Developed Flask + React application with WebSocket-based real-time updates.
-% \end{itemize}
+
+% %---------------------- TEACHING ----------------------%
+% \section*{Teaching Experience}
+
+% \textbf{Teaching Assistant — DS303 Introduction to Machine Learning} \\
+% Indian Institute of Technology Bombay
 
 % %---------------------- TECHNICAL SKILLS ----------------------%
 % \section*{Technical Skills}
@@ -220,142 +839,10 @@
 % \section*{Achievements}
 
 % \begin{itemize}
-%     \item Selected for PhD in Machine Learning at IIT Bombay.
-%     \item Completed Integrated B.Tech + M.Tech in Computer Science from JNU.
-%     \item Guardian @Leetcode, Among Top 0.97\% coders on the platform
-%     \item Qualified for UGC NET-JRF with 99.94 percentile(18th Rank) in the subject of Computer Science and Applications
+%     \item Qualified UGC NET-JRF (99.94 percentile, Rank 18) in the subject of Computer Science and Applications.
+%     \item Guardian @LeetCode (Top 0.97\% globally).
+%     \item GATE DA Score 601, GATE CS Score 577.
 % \end{itemize}
 
 % %---------------------- END ----------------------%
 % \end{document}
-
-\documentclass[11pt]{article}
-
-\usepackage[a4paper, margin=1in]{geometry}
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{xcolor}
-\usepackage{titlesec}
-\usepackage{tabularx}
-\usepackage{hyperref}
-
-%---------------------- STYLE ----------------------%
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue,
-    linkcolor=black
-}
-
-\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
-\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
-
-\renewcommand{\familydefault}{\sfdefault}
-
-%---------------------- DOCUMENT ----------------------%
-\begin{document}
-
-%---------------------- HEADER ----------------------%
-\begin{center}
-    {\LARGE \textbf{Rahul Kumar Yadav}}\\[4pt]
-    \normalsize PhD candidate in DS \& AI   \\
-    Centre for Machine Intelligence and Data Science (C-MInDS) \\
-    Indian Institute of Technology Bombay \\[6pt]
-
-    \small
-    \href{mailto:rahulky@iitb.ac.in}{rahulky@iitb.ac.in} \quad | \quad
-    \href{https://github.com/yourgithub}{GitHub} \quad | \quad
-    \href{https://scholar.google.com}{Google Scholar} \quad | \quad
-    \href{https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/}{LinkedIn}\quad | \quad
-    \href{https://wiz-2.github.io/rahulky.github.io/}{Website}
-\end{center}
-
-\vspace{0pt}
-
-%---------------------- RESEARCH INTERESTS ----------------------%
-\section*{Research Interests}
-Adversarial robustness in machine learning, kernel methods,  
-generalization in overparameterized regimes.
-
-%---------------------- EDUCATION ----------------------%
-\section*{Education}
-
-\begin{tabularx}{\textwidth}{X r}
-\textbf{Indian Institute of Technology Bombay} & 2025 -- Present \\
-PhD in Machine Learning & \\
-Advisors: Prof. Arjun Nitin Bhagoji, Prof. Parthe Pandit & \\[6pt]
-
-\textbf{Jawaharlal Nehru University (JNU)} & 2019 -- 2024 \\
-Integrated B.Tech + M.Tech in Computer Science & \\
-\end{tabularx}
-
-%---------------------- COURSEWORK ----------------------%
-\section*{Coursework}
-Robust Machine Learning, Learning and Inference in High Dimensions, Statistical Learning Theory,  Advances in Safety Critical Machine Learning, Optimization, Linear Systems, Foundations of Intelligent and Learning Agents, Mathematics of Deep Learning
-
-%---------------------- PUBLICATIONS ----------------------%
-\section*{Publications}
-
-\begin{itemize}
-    \item Priya Gupta, Ravi Rahar, \textbf{Rahul Kumar Yadav}, Ajit Singh, Ramandeep, Sunil Kumar \\
-    ``Combining Forth and Rust: A Robust and Efficient Approach for Low-Level System Programming''
-    \href{https://www.mdpi.com/2673-4591/59/1/54}{\textit{Engineering Proceedings (MDPI), 2024}}. \\
-    
-\end{itemize}
-
-%---------------------- RESEARCH EXPERIENCE ----------------------%
-\section*{Research Experience}
-
-% \begin{tabularx}{\textwidth}{X r}
-\textbf{Adversarial Robustness in Kernel Methods and Neural Networks}\\
-% \end{tabularx}
-\begin{itemize}
-    \item Studying robustness of kernel machines compared to deep neural networks under strong adversarial attacks (PGD, AutoAttack, SPSA).
-    \item Investigating double descent and robust generalization gap in overparameterized regimes.
-\end{itemize}
-
-\vspace{0pt}
-
-\textbf{Neural Feature Ansatz in adversarial training of neural networks}
-\begin{itemize}
-    \item Analysing the validity of Neural Feature Ansatz for adversarially trained fully connected neural networks
-\end{itemize}
-
-\vspace{0pt}
-
-%---------------------- PROJECTS ----------------------%
-% \section*{Projects}
-
-% \textbf{Kernel vs Neural Network Benchmarking}
-% \begin{itemize}
-%     \item Built unified framework to evaluate robustness across kernels, random feature models, and neural networks.
-%     \item Implemented adversarial evaluation under $L_\infty$ and $L_2$ threat models.
-% \end{itemize}
-
-% \vspace{4pt}
-
-
-%---------------------- TEACHING ----------------------%
-\section*{Teaching Experience}
-
-\textbf{Teaching Assistant — DS303 Introduction to Machine Learning} \\
-Indian Institute of Technology Bombay
-
-%---------------------- TECHNICAL SKILLS ----------------------%
-\section*{Technical Skills}
-
-\textbf{Languages:} Python, C++, SQL \\
-\textbf{Frameworks:} PyTorch, TensorFlow (basic), Flask, React \\
-\textbf{Tools:} AutoAttack, NumPy, Pandas, Matplotlib, Git, Slurm \\
-\textbf{Core Areas:} Machine Learning, Adversarial ML, Kernel Methods
-
-%---------------------- ACHIEVEMENTS ----------------------%
-\section*{Achievements}
-
-\begin{itemize}
-    \item Qualified UGC NET-JRF (99.94 percentile, Rank 18) in the subject of Computer Science and Applications.
-    \item Guardian @LeetCode (Top 0.97\% globally).
-    \item GATE DA Score 601, GATE CS Score 577.
-\end{itemize}
-
-%---------------------- END ----------------------%
-\end{document}
