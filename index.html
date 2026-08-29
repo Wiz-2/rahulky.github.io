@@ -1,6 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rahul Kumar Yadav</title>
+<meta name="description" content="Academic website of Rahul Kumar Yadav, PhD Student in Machine Learning at IIT Bombay." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F5F0;
+    --paper-2:#F1EEE6;
+    --ink:#201F1D;
+    --ink-soft:#5B564C;
+    --indigo:#2F3C6B;
+    --rust:#9C4A34;
+    --rule:#DAD4C6;
+    --maxw:760px;
+    --marg:64px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* faint paper grain */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none;
+    opacity:.5;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(32,31,29,0.035) 1px, transparent 0);
+    background-size:3px 3px;
+    z-index:0;
+  }
+  a{color:var(--indigo); text-decoration-thickness:1px; text-underline-offset:2px;}
+  a:hover{color:var(--rust);}
+  .mono{
+    font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .container{
+    width:min(var(--maxw), calc(100% - 48px));
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+  }
+
+  /* ---------- Nav ---------- */
+  .topbar{
+    border-bottom:1px solid var(--rule);
+    background:rgba(247,245,240,0.9);
+    backdrop-filter:blur(6px);
+    position:sticky; top:0; z-index:30;
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    min-height:58px; gap:16px; flex-wrap:wrap;
+  }
+  .brand{
+    font-family:"Newsreader", serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.05rem;
+    color:var(--ink);
+  }
+  .brand:hover{color:var(--ink); text-decoration:none;}
+  .nav-links{
+    display:flex; flex-wrap:wrap; gap:22px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+  .nav-links a{ color:var(--ink-soft); }
+  .nav-links a:hover{ color:var(--rust); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:76px 0 40px;
+    overflow:hidden;
+  }
+  .hero-field{
+    position:absolute;
+    inset:-40px -10% auto -10%;
+    height:420px;
+    z-index:0;
+    opacity:0.55;
+  }
+  .kicker{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.74rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--rust);
+    margin:0 0 14px;
+  }
+  .kicker::before{ content:"§ "; }
+  h1{
+    font-family:"Newsreader", serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    margin:0 0 10px;
+    color:var(--ink);
+  }
+  .subtitle{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.92rem;
+    letter-spacing:0.02em;
+    color:var(--indigo);
+    margin-bottom:6px;
+  }
+  .affiliation{
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin-bottom:26px;
+  }
+  .hero-links{
+    display:flex; flex-wrap:wrap; gap:2px 22px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.82rem;
+    margin-bottom:30px;
+  }
+  .hero-links a{
+    color:var(--ink);
+    border-bottom:1px solid var(--rule);
+    padding-bottom:1px;
+  }
+  .hero-links a:hover{ color:var(--rust); border-color:var(--rust); }
+  .hero-note{
+    max-width:62ch;
+    padding-left:18px;
+    border-left:2px solid var(--rust);
+    color:var(--ink);
+  }
+  .hero-note em{ font-style:italic; color:var(--ink-soft); }
+
+  /* ---------- Sections ---------- */
+  main{ padding:8px 0 40px; }
+  section{
+    padding:38px 0;
+    border-top:1px solid var(--rule);
+    scroll-margin-top:80px;
+    position:relative;
+  }
+  section:first-of-type{ border-top:none; }
+  .sec-head{
+    display:grid;
+    grid-template-columns:var(--marg) 1fr;
+    align-items:baseline;
+    margin-bottom:20px;
+    gap:4px;
+  }
+  .sec-num{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.78rem;
+    color:var(--rust);
+    padding-top:5px;
+  }
+  h2{
+    font-family:"Newsreader", serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:1.55rem;
+    margin:0;
+    color:var(--ink);
+  }
+  .body-col{
+    display:grid;
+    grid-template-columns:var(--marg) 1fr;
+    gap:4px;
+  }
+  .body-col > .spacer{ }
+  .lede{ color:var(--ink); }
+  .lede p + p{ margin-top:14px; }
+
+  /* ---------- Entries ---------- */
+  .entry + .entry{
+    margin-top:22px;
+    padding-top:22px;
+    border-top:1px dashed var(--rule);
+  }
+  .entry-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    gap:16px; flex-wrap:wrap; margin-bottom:4px;
+  }
+  .entry-title{
+    margin:0; font-size:1.08rem; font-weight:600;
+    font-family:"Source Serif 4", serif;
+    color:var(--ink);
+  }
+  .entry-meta{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.76rem;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .entry-sub{ color:var(--ink-soft); font-size:0.95rem; margin-bottom:8px; }
+  ul.clean{ margin:8px 0 0; padding-left:20px; }
+  ul.clean li{ margin-top:6px; }
+  ul.clean li::marker{ color:var(--rust); }
+
+  /* ---------- Tags ---------- */
+  .tag-row{ display:flex; flex-wrap:wrap; gap:8px 10px; }
+  .tag{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.76rem;
+    color:var(--indigo);
+    border:1px solid var(--rule);
+    padding:5px 9px;
+    background:var(--paper-2);
+  }
+
+  /* ---------- Publications ---------- */
+  .pub-item{
+    padding:16px 0;
+    border-top:1px dashed var(--rule);
+  }
+  .pub-item:first-child{ border-top:none; padding-top:0; }
+  .pub-tag{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.7rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--rust);
+    display:block;
+    margin-bottom:6px;
+  }
+  .pub-title{ font-weight:600; margin-bottom:6px; }
+  .pub-authors{ color:var(--ink-soft); font-size:0.96rem; }
+  .pub-authors strong{ color:var(--ink); font-weight:600; }
+
+  /* ---------- Achievements ---------- */
+  .ach-list{ margin:0; padding-left:20px; }
+  .ach-list li{ margin-top:8px; }
+  .ach-list li::marker{ color:var(--rust); font-family:"IBM Plex Mono", monospace; }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{ display:grid; gap:10px; font-size:0.98rem; }
+  .contact-grid .k{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.74rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+    display:inline-block;
+    width:110px;
+  }
+  .cv-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.8rem; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--ink);
+    border:1px solid var(--ink);
+    padding:9px 16px;
+    margin-top:14px;
+  }
+  .cv-btn:hover{ background:var(--ink); color:var(--paper); text-decoration:none; }
+
+  .footer{
+    padding:30px 0 56px;
+    color:var(--ink-soft);
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.76rem;
+    text-align:center;
+    border-top:1px solid var(--rule);
+  }
+
+  @media (max-width:640px){
+    :root{ --marg:0px; }
+    .sec-head{ grid-template-columns:1fr; gap:6px; }
+    .sec-num{ padding-top:0; }
+    .body-col{ grid-template-columns:1fr; }
+    h1{ font-size:2.2rem; }
+    .nav{ flex-direction:column; align-items:flex-start; padding:12px 0; min-height:auto; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top">Rahul Kumar Yadav</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#coursework">Coursework</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="hero" id="top" style="border-top:none;">
+      <svg class="hero-field" viewBox="0 0 900 420" preserveAspectRatio="none" aria-hidden="true">
+        <!-- faint decision-boundary contours -->
+        <g fill="none" stroke="#2F3C6B" stroke-width="1">
+          <path d="M-20,120 C150,60 300,180 460,110 C620,40 750,140 920,90" opacity="0.18"/>
+          <path d="M-20,180 C160,120 300,240 460,170 C620,100 760,200 920,150" opacity="0.14"/>
+          <path d="M-20,240 C170,190 310,300 460,235 C610,170 770,260 920,215" opacity="0.10"/>
+        </g>
+        <g fill="none" stroke="#9C4A34" stroke-width="1">
+          <path d="M-20,60 C140,10 320,110 480,55 C660,-10 780,80 920,30" opacity="0.14"/>
+        </g>
+      </svg>
+
+      <p class="kicker">PhD Student, Machine Learning</p>
+      <h1>Rahul Kumar Yadav</h1>
+      <div class="subtitle">Centre for Machine Intelligence and Data Science (C&#8209;MInDS)</div>
+      <div class="affiliation">Indian Institute of Technology Bombay</div>
+
+      <div class="hero-links">
+        <a href="mailto:rahulky@iitb.ac.in">Email</a>
+        <a href="https://github.com/Wiz-2" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=ZxOkbOUAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="#contact">CV</a>
+      </div>
+
+      <div class="hero-note">
+        I study how machine learning systems hold up when someone is actively trying to break them &mdash;
+        <em>working, at present, on where kernel machines stand relative to neural networks under adversarial attack.</em>
+      </div>
+    </section>
+
+    <main>
+      <section id="about">
+        <div class="sec-head">
+          <span class="sec-num">01</span>
+          <h2>About</h2>
+        </div>
+        <div class="body-col">
+          <div class="spacer"></div>
+          <div class="lede">
+            <p>
+              I am a PhD student in Machine Learning at IIT Bombay, advised by Prof. Arjun Nitin Bhagoji and Prof. Parthe Pandit. My research interests include adversarial robustness, kernel methods, random feature models, and statistical learning theory.
+            </p>
+            <p>
+              I am particularly interested in understanding how kernel machines compare with neural networks under strong adversarial evaluation, and in building theoretically grounded, empirically reliable machine learning systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="research">
+        <div class="sec-head">
+          <span class="sec-num">02</span>
+          <h2>Research</h2>
+        </div>
+        <div class="body-col">
+          <div class="spacer"></div>
+          <div>
+            <div class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">Adversarial Robustness in Kernel Methods and Neural Networks</h3>
+                <div class="entry-meta">2025&nbsp;&mdash;&nbsp;Present</div>
+              </div>
+              <ul class="clean">
+                <li>Studying robustness of kernel machines compared to deep neural networks under standard adversarial attacks.</li>
+                <li>Working to introduce algorithms for adversarial training of kernel methods.</li>
+                <li>Investigating the properties of kernel ablations and the adversarial robustness of kernel machines.</li>
+              </ul>
+            </div>
+
+            <div class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">Research Interests</h3>
+              </div>
+              <div class="tag-row">
+                <span class="tag">Adversarial robustness</span>
+                <span class="tag">Kernel methods</span>
+                <span class="tag">Random feature models</span>
+                <span class="tag">Statistical learning theory</span>
+                <span class="tag">Generalization</span>
+                <span class="tag">Optimization</span>
+              </div>
+            </div>
+
+            <div class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">Education</h3>
+              </div>
+              <div class="entry-sub" style="margin-top:2px;">Indian Institute of Technology Bombay &middot; 2025&nbsp;&mdash;&nbsp;Present</div>
+              <div>PhD in Machine Learning</div>
+              <div class="entry-sub" style="margin-top:12px;">Jawaharlal Nehru University &middot; 2019&nbsp;&mdash;&nbsp;2024</div>
+              <div>Integrated B.Tech + M.Tech in Computer Science</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <div class="sec-head">
+          <span class="sec-num">03</span>
+          <h2>Preprints &amp; Upcoming Publications</h2>
+        </div>
+        <div class="body-col">
+          <div class="spacer"></div>
+          <div>
+            <article class="pub-item">
+              <span class="pub-tag">Preprint</span>
+              <div class="pub-title">Adversarial Robustness of Kernel Machines: A Comprehensive Empirical Analysis</div>
+              <div class="pub-authors"><strong>Rahul Kumar Yadav</strong>, Tunir Ghosh, Sudhendu Ahir, Parthe Pandit, Arjun Bhagoji</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="teaching">
+        <div class="sec-head">
+          <span class="sec-num">04</span>
+          <h2>Teaching Assistant</h2>
+        </div>
+        <div class="body-col">
+          <div class="spacer"></div>
+          <div>
+            <div class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">DS 303: Introduction to Machine Learning</h3>
+              </div>
+              <div class="entry-sub">Indian Institute of Technology Bombay</div>
+            </div>
+            <div class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">DS 203: Programming for Data Science</h3>
+              </div>
+              <div class="entry-sub">Indian Institute of Technology Bombay</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="coursework">
+        <div class="sec-head">
+          <span class="sec-num">05</span>
+          <h2>Coursework</h2>
+        </div>
+        <div class="body-col">
+          <div class="spacer"></div>
+          <div class="tag-row">
+            <span class="tag">Robust Machine Learning</span>
+            <span class="tag">Learning and Inference in High Dimensions</span>
+            <span class="tag">Statistical Learning Theory</span>
+            <span class="tag">Advances in Safety-Critical Machine Learning</span>
+            <span class="tag">Optimization</span>
+            <span class="tag">Linear Systems</span>
+            <span class="tag">Foundations of Intelligent and Learning Agents</span>
+            <span class="tag">Mathematics of Deep Learning</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="achievements">
+        <div class="sec-head">
+          <span class="sec-num">06</span>
+          <h2>Achievements</h2>
+        </div>
+        <div class="body-col">
+          <div class="spacer"></div>
+          <ul class="ach-list">
+            <li>Qualified UGC NET&#8209;JRF (99.94 percentile, Rank 18) in Computer Science and Applications.</li>
+            <li>Guardian at LeetCode (Top 0.97% globally).</li>
+            <li>GATE DA Score: 601; GATE CS Score: 577.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="sec-head">
+          <span class="sec-num">07</span>
+          <h2>Contact</h2>
+        </div>
+        <div class="body-col">
+          <div class="spacer"></div>
+          <div class="contact-grid">
+            <div><span class="k">Email</span> <a href="mailto:rahulky@iitb.ac.in">rahulky@iitb.ac.in</a></div>
+            <div><span class="k">Affiliation</span> C&#8209;MInDS, IIT Bombay</div>
+            <div><span class="k">Links</span> <a href="https://github.com/Wiz-2" target="_blank" rel="noreferrer">GitHub</a> &middot; <a href="https://scholar.google.com/citations?user=ZxOkbOUAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a> &middot; <a href="https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/" target="_blank" rel="noreferrer">LinkedIn</a></div>
+            <a class="cv-btn" href="assets/Rahul_Kumar_Yadav_CV.pdf" target="_blank">Download CV &nbsp;&rarr;</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      &copy; <span id="year"></span> Rahul Kumar Yadav &middot; Built for GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rahul Kumar Yadav</title>
@@ -364,7 +884,7 @@
       <div class="hero-card">
         <div class="avatar" aria-label="Profile placeholder">
           <!-- Replace with your image: <img src="assets/rahul.jpg" alt="Rahul Kumar Yadav"> -->
-          RKY
+          <!-- RKY
         </div>
         <div>
           <h1>Rahul Kumar Yadav</h1>
@@ -566,4 +1086,4 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
-</html>
+</html> --> -->
